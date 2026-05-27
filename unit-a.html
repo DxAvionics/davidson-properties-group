@@ -308,7 +308,6 @@
             <li>15-Month: minimum $3,200/mo gross.</li>
             <li><strong>Military BAH:</strong> Applicants receiving Basic Allowance for Housing (BAH) at the applicable rate qualify regardless of other income thresholds.</li>
             <li>Income verification required: two most recent pay stubs, bank statements, LES, or most recent tax return.</li>
-            <li><strong>Military BAH Exception:</strong> Applicants receiving Basic Allowance for Housing (BAH) at the applicable rate for Mountain Home, Idaho qualify regardless of other stated income thresholds, at landlord discretion. LES required for verification.</li>
             <li>Landlord reserves the right to approve or deny applications at their sole discretion regardless of stated minimums.</li>
           </ul>
         </div>
@@ -577,11 +576,11 @@
   // Form submission
   const form = document.getElementById('rentalApp');
 
-  // Military toggle
-  document.querySelectorAll('input[name="military_service"]').forEach(function(r){
-    r.addEventListener('change', function(){
+  // Military service toggle
+  document.querySelectorAll('input[name="military_service"]').forEach(function(r) {
+    r.addEventListener('change', function() {
       var d = document.getElementById('mil_detail');
-      if(d) d.style.display = this.value==='Yes'?'block':'none';
+      if (d) d.style.display = this.value === 'Yes' ? 'block' : 'none';
     });
   });
 

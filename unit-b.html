@@ -225,6 +225,46 @@
           <div class="form-group"><label>Additional Income</label><input type="text" name="add_income" placeholder="$0.00"></div>
           <div class="form-group"><label>Additional Income Source</label><input type="text" name="add_source" placeholder="e.g. VA benefits"></div>
         </div>
+        
+        <hr class="divider">
+        <div class="sub-heading">Military Service</div>
+        <div class="form-group">
+          <label>Are you currently serving in the U.S. Military or receiving Basic Allowance for Housing (BAH)? <span class="req">&#10022;</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="military_service" value="Yes" id="mil_yes"> Yes</label>
+            <label><input type="radio" name="military_service" value="No" id="mil_no"> No</label>
+          </div>
+        </div>
+        <div id="mil_detail" style="display:none; margin-top:0.75rem;">
+          <div class="form-grid" style="margin-top:0.5rem;">
+            <div class="form-group">
+              <label>Branch of Service</label>
+              <select name="military_branch">
+                <option value="">&#8212; Select &#8212;</option>
+                <option>Army</option>
+                <option>Navy</option>
+                <option>Air Force / Space Force</option>
+                <option>Marine Corps</option>
+                <option>Coast Guard</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Receiving BAH (Basic Allowance for Housing)?</label>
+              <div class="radio-group">
+                <label><input type="radio" name="receives_bah" value="Yes"> Yes</label>
+                <label><input type="radio" name="receives_bah" value="No"> No</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top:0.75rem;">
+            <label>LES (Leave and Earnings Statement)</label>
+            <p style="font-size:0.78rem;color:var(--gray-dark);margin-top:0.25rem;line-height:1.6;">
+              A current LES will be requested during income verification as proof of BAH eligibility.
+              Applicants receiving BAH at the applicable rate for Mountain Home, Idaho qualify
+              regardless of other stated income thresholds, at landlord discretion.
+            </p>
+          </div>
+        </div>
         <div class="policy-box" style="margin-top:1rem;">
           <h4>Unit B Income Requirement</h4>
           <ul>
@@ -235,7 +275,6 @@
             <li>15-Month: minimum $2,800/mo gross.</li>
             <li><strong>Military BAH:</strong> Applicants receiving Basic Allowance for Housing (BAH) at the applicable rate qualify regardless of other income thresholds.</li>
             <li>Note: Electric and 40% of water bill are billed separately with rent &mdash; budget accordingly.</li>
-            <li><strong>Military BAH Exception:</strong> Applicants receiving Basic Allowance for Housing (BAH) at the applicable rate for Mountain Home, Idaho qualify regardless of other stated income thresholds, at landlord discretion. LES required for verification.</li>
             <li>Landlord reserves the right to approve or deny applications at their sole discretion regardless of stated minimums.</li>
           </ul>
         </div>
@@ -489,11 +528,11 @@
   document.querySelector('input[name="sig_date"]').valueAsDate = new Date();
   const form = document.getElementById('rentalApp');
 
-  // Military toggle
-  document.querySelectorAll('input[name="military_service"]').forEach(function(r){
-    r.addEventListener('change', function(){
+  // Military service toggle
+  document.querySelectorAll('input[name="military_service"]').forEach(function(r) {
+    r.addEventListener('change', function() {
       var d = document.getElementById('mil_detail');
-      if(d) d.style.display = this.value==='Yes'?'block':'none';
+      if (d) d.style.display = this.value === 'Yes' ? 'block' : 'none';
     });
   });
 
