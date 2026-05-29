@@ -13,8 +13,8 @@ var unitA_available = false;
 var unitA_on_hold   = false;
 
 // UNIT B — 3 Bed / 1 Bath / Basement
-var unitB_available = true;
-var unitB_on_hold   = true;
+var unitB_available = false;
+var unitB_on_hold   = false;
 
 // UNIT C — Lofted Studio / Detached
 var unitC_available = true;
